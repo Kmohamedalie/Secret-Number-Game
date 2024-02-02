@@ -11,6 +11,14 @@ document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
 */
 
+// set a sound for win
+const win = document.createElement("audio");
+win.src = "Game-Win.mp3";
+// set a sound for lose
+const lose = document.createElement("audio");
+lose.src = "Game-Over.mp3";
+
+
 // secret number
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
@@ -42,8 +50,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // increase the number
     document.querySelector('.number').style.width = '30rem';
     // sound game win
-    let beat = new Audio('https://github.com/Kmohamedalie/gsn/blob/master/Game-Win.mp3');
-    beat.play();
+    win.play();
 
     // if current score is higher than highScore
     if (score > highScore) {
@@ -67,8 +74,9 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.number').textContent = '😜';
       document.querySelector('.score').textContent = 0;
       // sound game over
-      let beat = new Audio('https://github.com/Kmohamedalie/gsn/blob/master/Game-Over.mp3');
-      beat.play();
+      //let beat = new Audio('https://github.com/Kmohamedalie/gsn/blob/master/Game-Over.mp3');
+      //beat.play();
+      lose.play();
     }
   }
 });
