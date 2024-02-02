@@ -42,7 +42,7 @@ document.querySelector('.check').addEventListener('click', function () {
     // increase the number
     document.querySelector('.number').style.width = '30rem';
     // sound game win
-    let beat = new Audio('Game-Win.mp3');
+    let beat = new Audio('https://github.com/Kmohamedalie/gsn/blob/master/Game-Win.mp3');
     beat.play();
 
     // if current score is higher than highScore
@@ -67,7 +67,7 @@ document.querySelector('.check').addEventListener('click', function () {
       document.querySelector('.number').textContent = '😜';
       document.querySelector('.score').textContent = 0;
       // sound game over
-      let beat = new Audio('Game-Over.mp3');
+      let beat = new Audio('https://github.com/Kmohamedalie/gsn/blob/master/Game-Over.mp3');
       beat.play();
     }
   }
