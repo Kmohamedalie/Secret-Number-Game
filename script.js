@@ -17,6 +17,9 @@ win.src = "Game-Win.mp3";
 // set a sound for lose
 const lose = document.createElement("audio");
 lose.src = "Game-Over.mp3";
+// set a sound select sound
+const select = document.createElement("audio");
+select.src = "select.mp3";
 
 
 // secret number
@@ -32,6 +35,7 @@ const displayMessage = function (message) {
 };
 
 document.querySelector('.check').addEventListener('click', function () {
+  select.play();
   const guess = Number(document.querySelector('.guess').value);
   console.log(guess, typeof guess);
 
@@ -120,6 +124,7 @@ document.querySelector('.check').addEventListener('click', function () {
 // PLAY AGAIN LOGIC
 document.querySelector('.again').addEventListener('click', function () {
   score = 10;
+  select.play();
   // secret number
   let secretNumber = Math.trunc(Math.random() * 20) + 1;
 
