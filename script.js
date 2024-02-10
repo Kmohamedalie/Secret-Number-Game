@@ -10,6 +10,9 @@ document.querySelector('.score').textContent = 10;
 document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
 */
+// secret number
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+
 
 // set a sound for win
 const win = document.createElement("audio");
@@ -22,8 +25,7 @@ const select = document.createElement("audio");
 select.src = "select.mp3";
 
 
-// secret number
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
+
 
 // default score
 let score = 10;
@@ -126,7 +128,7 @@ document.querySelector('.again').addEventListener('click', function () {
   score = 10;
   select.play();
   // secret number
-  let secretNumber = Math.trunc(Math.random() * 20) + 1;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
 
   document.querySelector('.message').textContent = 'Start guessing...';
   document.querySelector('.score').textContent = score;
